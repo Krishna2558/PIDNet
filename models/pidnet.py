@@ -13,6 +13,7 @@ bn_mom = 0.1
 algc = False
 
 NUM_CLASSES = 7
+PRETRAINED_MODEL_PATH = '/content/drive/MyDrive/Colab Notebooks/Semantic_Segmentation_Database/PIDNet_S_ImageNet.pth.tar'
 
 class PIDNet(nn.Module):
 
