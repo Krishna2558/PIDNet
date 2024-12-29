@@ -12,7 +12,7 @@ BatchNorm2d = nn.BatchNorm2d
 bn_mom = 0.1
 algc = False
 
-
+NUM_CLASSES = 7
 
 class PIDNet(nn.Module):
 
