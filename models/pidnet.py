@@ -184,7 +184,7 @@ class PIDNet(nn.Module):
 def get_seg_model(imgnet_pretrained):
     
     #if 's' in cfg.MODEL.NAME:
-        model = PIDNet(m=2, n=3, num_classes= NUM_CLASSES, planes=32, ppm_planes=96, head_planes=128, augment=True)
+    model = PIDNet(m=2, n=3, num_classes= NUM_CLASSES, planes=32, ppm_planes=96, head_planes=128, augment=True)
     #elif 'm' in cfg.MODEL.NAME:
         #model = PIDNet(m=2, n=3, num_classes=cfg.DATASET.NUM_CLASSES, planes=64, ppm_planes=96, head_planes=128, augment=True)
     #else:
