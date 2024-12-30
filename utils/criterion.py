@@ -22,7 +22,7 @@ class CrossEntropy(nn.Module):
 
         return loss
 
-    def forward(self, score, target):
+    """def forward(self, score, target):
 
         if config.MODEL.NUM_OUTPUTS == 1:
             score = [score]
@@ -36,7 +36,7 @@ class CrossEntropy(nn.Module):
         
         else:
             raise ValueError("lengths of prediction and target are not identical!")
-
+"""
         
 
 
