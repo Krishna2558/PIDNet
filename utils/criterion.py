@@ -16,7 +16,7 @@ class CrossEntropy(nn.Module):
             ignore_index=ignore_label
         )
 
-    def _forward(self, score, target):
+    def forward(self, score, target):
 
         loss = self.criterion(score, target)
 
