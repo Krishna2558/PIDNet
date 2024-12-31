@@ -21,7 +21,7 @@ class CrossEntropy(nn.Module):
         loss = self.criterion(score, target)
 
         return loss
-
+'''
     def forward(self, score, target):
 
         if config.MODEL.NUM_OUTPUTS == 1:
@@ -139,7 +139,7 @@ if __name__ == '__main__':
     Loss_fc = BondaryLoss()
     loss = Loss_fc(pre, a.to(torch.uint8))
 
-        
+      '''  
         
         
 
