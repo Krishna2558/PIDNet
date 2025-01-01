@@ -16,20 +16,20 @@ NUM_OUTPUTS = 2
 
 
 class CrossEntropy(nn.Module):
-    def __init__(self, ignore_label=-1, weight=None):
+    def __init__(self, ignore_label=-1)#, weight=None):
         super(CrossEntropy, self).__init__()
         self.ignore_label = ignore_label
         self.criterion = nn.CrossEntropyLoss(
-            weight=weight,
+            #weight=weight,
             ignore_index=ignore_label
         )
 
-    def _forward(self, score, target):
+    def '''_'''forward(self, score, target):
 
         loss = self.criterion(score, target)
 
         return loss
-
+'''
     def forward(self, score, target):
         print("Score: ",score)
         print("target: ",target)
@@ -49,7 +49,7 @@ class CrossEntropy(nn.Module):
             print("Length of target (balance weights):", len(balance_weights))
             #raise ValueError(f"lengths of prediction and target are not identical! Length of prediction: {len(score)}. Length of target (balance weights): {len(balance_weights)}")
 '''
-        
+'''        
 
 
 class OhemCrossEntropy(nn.Module):
