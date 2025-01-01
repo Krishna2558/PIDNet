@@ -43,7 +43,7 @@ class CrossEntropy(nn.Module):
             return sb_weights * self._forward(score[0], target)
         
         else:
-            raise ValueError("lengths of prediction and target are not identical!")
+            raise ValueError(f"lengths of prediction and target are not identical! Length of prediction: {len(score}. Length of target (balance weights): {len(balance_weights}")
 '''
         
 
