@@ -7,6 +7,13 @@ from torch.nn import functional as F
 from configs import config
 
 
+USE_OHEM: true
+OHEMTHRES: 0.9
+OHEMKEEP: 131072
+BALANCE_WEIGHTS: [0.4, 1.0]
+SB_WEIGHTS: 1.0
+
+
 class CrossEntropy(nn.Module):
     def __init__(self, ignore_label=-1, weight=None):
         super(CrossEntropy, self).__init__()
@@ -16,19 +23,19 @@ class CrossEntropy(nn.Module):
             ignore_index=ignore_label
         )
 
-    def forward(self, score, target):
+    def _forward(self, score, target):
 
         loss = self.criterion(score, target)
 
         return loss
-'''
+
     def forward(self, score, target):
 
         if config.MODEL.NUM_OUTPUTS == 1:
             score = [score]
 
-        balance_weights = config.LOSS.BALANCE_WEIGHTS
-        sb_weights = config.LOSS.SB_WEIGHTS
+        balance_weights = BALANCE_WEIGHTS
+        sb_weights = SB_WEIGHTS
         if len(balance_weights) == len(score):
             return sum([w * self._forward(x, target) for (w, x) in zip(balance_weights, score)])
         elif len(score) == 1:
@@ -36,7 +43,7 @@ class CrossEntropy(nn.Module):
         
         else:
             raise ValueError("lengths of prediction and target are not identical!")
-
+'''
         
 
 
