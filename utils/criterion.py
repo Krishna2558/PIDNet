@@ -32,7 +32,7 @@ class CrossEntropy(nn.Module):
 
     def forward(self, score, target):
 
-        if config.MODEL.NUM_OUTPUTS == 1:
+        if NUM_OUTPUTS == 1:
             score = [score]
 
         balance_weights = BALANCE_WEIGHTS
