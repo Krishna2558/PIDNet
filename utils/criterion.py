@@ -30,7 +30,7 @@ class CrossEntropy(nn.Module):
 
         return loss
 
-        def forward(self, score, target):
+    def forward(self, score, target):
         print("Score: ",score)
         print("target: ",target)
         if NUM_OUTPUTS == 1:
