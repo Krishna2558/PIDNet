@@ -10,8 +10,8 @@ from configs import config
 #USE_OHEM: true
 #OHEMTHRES: 0.9
 #OHEMKEEP: 131072
-BALANCE_WEIGHTS: [0.4, 1.0]
-SB_WEIGHTS: 1.0
+BALANCE_WEIGHTS = [0.4, 1.0]
+SB_WEIGHTS = 1.0
 
 
 class CrossEntropy(nn.Module):
